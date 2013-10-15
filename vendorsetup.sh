@@ -1,0 +1,2 @@
+add_lunch_combo full_p5110-userdebug
+add_lunch_combo custom_p5110-userdebug

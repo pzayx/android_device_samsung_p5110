@@ -67,6 +67,6 @@
     </integer-array>
 
     <!-- True if the Irda service should be started at system start -->
-    <bool name="config_enableIrdaManagerService">true</bool>
+   <!--  <bool name="config_enableIrdaManagerService">true</bool> -->
 
 </resources>

@@ -14,28 +14,21 @@
 # limitations under the License.
 #
 
-## Specify phone tech before including full_phone
-$(call inherit-product, vendor/cm/config/gsm.mk)
 
-# Release name
-PRODUCT_RELEASE_NAME := p5110
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
-# Boot animation
-TARGET_SCREEN_HEIGHT := 800
-TARGET_SCREEN_WIDTH := 1280
+# Inherit from our custom product configuration 	
+$(call inherit-product, vendor/custom/config/common.mk)
 
-# Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
+$(call inherit-product, device/samsung/p5110/device.mk)
 
-# Inherit device configuration
-$(call inherit-product, device/samsung/p5110/full_p5110.mk)
-
-## Device identifier. This must come after all inclusions
+# Discard inherited values and use our own instead.
+PRODUCT_NAME := custom_p5110
 PRODUCT_DEVICE := p5110
-PRODUCT_NAME := cm_p5110
 PRODUCT_BRAND := samsung
-PRODUCT_MODEL := GT-P5110
 PRODUCT_MANUFACTURER := samsung
+PRODUCT_MODEL := GT-P5110
 
-#Set build fingerprint / ID / Prduct Name ect.
 PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=espresso10wifixx TARGET_DEVICE=espresso10wifi BUILD_FINGERPRINT=samsung/espresso10wifixx/espresso10wifi:4.0.3/IML74K/P5110XWALD2:user/release-keys PRIVATE_BUILD_DESC="espresso10wifixx-user 4.0.3 IML74K P5110XWALD2 release-keys"
+
