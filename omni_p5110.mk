@@ -17,14 +17,12 @@
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
-
 # Inherit from our custom product configuration 	
-$(call inherit-product, vendor/custom/config/common.mk)
-
+$(call inherit-product, vendor/omni/config/common.mk)
 $(call inherit-product, device/samsung/p5110/device.mk)
 
 # Discard inherited values and use our own instead.
-PRODUCT_NAME := custom_p5110
+PRODUCT_NAME := omni_p5110
 PRODUCT_DEVICE := p5110
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung
